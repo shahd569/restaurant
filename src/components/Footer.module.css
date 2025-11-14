@@ -1,0 +1,33 @@
+.footer {
+  height: 3rem;
+  padding: 1rem;
+  color: #ef4444;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    height: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .footer {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.25rem;
+}

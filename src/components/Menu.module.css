@@ -1,0 +1,20 @@
+.menu_panel {
+  background-color: #ef4444;
+  position: absolute;
+  color: white;
+  left: 0;
+  top: 6rem;
+  height: calc(100vh - 6rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.875rem;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  z-index: 10;
+}
+
+.menu_icon {
+  cursor: pointer;
+}

@@ -1,0 +1,14 @@
+.notification {
+  height: 3rem;
+  background-color: #ef4444;
+  color: white;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+}
