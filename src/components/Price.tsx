@@ -21,7 +21,7 @@ const Price = ({ product }: { product: ProductType }) => {
         quantity * initialPrice + product.options[selected].additionalPrice
       );
     }
-  }, [quantity, selected, product]);
+  }, [quantity, selected, product, initialPrice]);
 
   const handleCart = () => {
     addtoCart({
