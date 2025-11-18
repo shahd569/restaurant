@@ -7,7 +7,9 @@ import { NextRequest } from "next/server";
 import DeleteButton from "@/components/DeleteButton";
 
 const getData = async (id: string) => {
-  const res = await fetch(`/api/products/${id}`, {
+  const baseUrl = process.env.NEXTAUTH_URL || "http://localhost:3000";
+  const fullUrl = `${baseUrl}/api/products/${id}`;
+  const res = await fetch(fullUrl, {
     cache: "no-store",
   });
   if (!res.ok) {

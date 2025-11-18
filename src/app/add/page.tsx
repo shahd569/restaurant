@@ -88,7 +88,9 @@ const Addpage = () => {
       } else {
         url = "";
       }
-      const res = await fetch("/api/products", {
+      const baseUrl = process.env.NEXTAUTH_URL || "http://localhost:3000";
+      const fullUrl = `${baseUrl}/api/products`;
+      const res = await fetch(fullUrl, {
         method: "POST",
         body: JSON.stringify({
           img: url,

@@ -16,7 +16,9 @@ const DeleteButton = ({ id }: { id: string }) => {
   }
 
   const handleDelete = async () => {
-    const res = await fetch(`/api/products/${id}`, {
+    const baseUrl = process.env.NEXTAUTH_URL || "http://localhost:3000";
+    const fullUrl = `${baseUrl}/api/products/${id}`;
+    const res = await fetch(fullUrl, {
       method: "DELETE",
     });
     if (res.status === 200) {

@@ -12,8 +12,10 @@ const SearchParamsComponent = () => {
     if (!payment_intent) return;
 
     const makeRequset = async () => {
+      const baseUrl = process.env.NEXTAUTH_URL || "http://localhost:3000";
+      const fullUrl = `${baseUrl}/api/checkout/confirm/${payment_intent}`;
       try {
-        await fetch(`/api/checkout/confirm/${payment_intent}`, {
+        await fetch(fullUrl, {
           method: "PUT",
         });
         router.push("/orders");

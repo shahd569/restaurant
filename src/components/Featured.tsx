@@ -4,7 +4,9 @@ import Styles from "./Featured.module.css";
 import { ProductType } from "@/types/types";
 
 const getData = async () => {
-  const res = await fetch("/api/products", {
+  const baseUrl = process.env.NEXTAUTH_URL || "http://localhost:3000";
+  const fullUrl = `${baseUrl}/api/products`;
+  const res = await fetch(fullUrl, {
     cache: "no-store",
   });
   if (!res.ok) {

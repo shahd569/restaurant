@@ -4,7 +4,9 @@ import Link from "next/link";
 import { MenuType } from "@/types/types";
 
 const getData = async () => {
-  const res = await fetch("/api/categories", {
+  const baseUrl = process.env.NEXTAUTH_URL || "http://localhost:3000";
+  const fullUrl = `${baseUrl}/api/categories`;
+  const res = await fetch(fullUrl, {
     cache: "no-store",
   });
   if (!res.ok) {

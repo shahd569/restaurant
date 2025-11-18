@@ -20,7 +20,9 @@ const CartPage = () => {
       router.push("/");
     } else {
       try {
-        const res = await fetch("/api/orders", {
+        const baseUrl = process.env.NEXTAUTH_URL || "http://localhost:3000";
+        const fullUrl = `${baseUrl}/api/orders`;
+        const res = await fetch(fullUrl, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

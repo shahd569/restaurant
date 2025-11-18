@@ -6,7 +6,9 @@ import { ProductType } from "@/types/types";
 import { NextRequest } from "next/server";
 
 const getData = async (category: string) => {
-  const res = await fetch(`/api/products?cat=${category}`, {
+  const baseUrl = process.env.NEXTAUTH_URL || "http://localhost:3000";
+  const fullUrl = `${baseUrl}/api/products?cat=${category}`;
+  const res = await fetch(fullUrl, {
     cache: "no-store",
   });
   if (!res.ok) {

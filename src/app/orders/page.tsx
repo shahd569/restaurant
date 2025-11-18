@@ -14,15 +14,17 @@ const OrdersPage = () => {
   if (status === "unauthenticated") {
     router.push("/");
   }
+  const baseUrl = process.env.NEXTAUTH_URL || "http://localhost:3000";
+  const fullUrl = `${baseUrl}/api/orders`;
   const { isLoading, error, data } = useQuery({
     queryKey: ["orders"],
-    queryFn: () => fetch("/api/orders").then((res) => res.json()),
+    queryFn: () => fetch(fullUrl).then((res) => res.json()),
   });
 
   const queryClient = useQueryClient();
   const mutation = useMutation({
     mutationFn: ({ id, status }: { id: string; status: string }) => {
-      return fetch(`/api/orders/${id}`, {
+      return fetch(`${fullUrl}/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "appliction/json",
