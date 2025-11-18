@@ -4,7 +4,7 @@ import Styles from "./Featured.module.css";
 import { ProductType } from "@/types/types";
 
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/products", {
+  const res = await fetch("/api/products", {
     cache: "no-store",
   });
   if (!res.ok) {

@@ -7,7 +7,7 @@ import { NextRequest } from "next/server";
 import DeleteButton from "@/components/DeleteButton";
 
 const getData = async (id: string) => {
-  const res = await fetch(`http://localhost:3000/api/products/${id}`, {
+  const res = await fetch(`/api/products/${id}`, {
     cache: "no-store",
   });
   if (!res.ok) {
